@@ -1,0 +1,8 @@
+Ur/Web Wrapper for Twitter's Bootstrap
+by Adam Chlipala, Patrick Hurst and others
+
+http://hg.impredicative.com/bootstrap/
+
+* Changed prefixes for styles. 
+  Helps to distinguish bootstrap classes from other css in the code 
+  - Alexander Abushkevich

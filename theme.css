@@ -1,0 +1,116 @@
+/* Required for bootstrap scrollspy */
+.position_relative {
+    position:relative;
+}
+
+/* Required for correct positioning when the menu is position:fixed */
+.target {
+    display: block;
+    margin-top: -50px;
+    height: 50px;
+}
+
+/* Theme tuning ----------------------------------------------------------- */
+.min_width_limit {
+    min-width:160px;
+}
+
+.logo {
+    font-size:55px;
+}
+
+.nav > li > a:hover, .nav > li > a:focus {
+    text-decoration: none;
+    background-color: #777;
+}
+
+.menu_wrap {
+    position:relative;
+    min-height:50px;
+    
+}
+
+.menu {
+    top:0px;
+    width:100%;
+    z-index:3000;
+}
+.menu .navbar{margin-top:0px;}
+
+
+.footer {
+    margin-top:70px;
+    border-top: 1px solid #000;
+    background-color: #333;
+    color: #F9F9F9;
+}
+
+.header_content {
+    top: 30px;
+    position: absolute;
+    width:100%;
+    
+
+      -webkit-transition: top 0s ease 0s;
+         -moz-transition: top 0s ease 0s;
+           -o-transition: top 0s ease 0s;
+          -ms-transition: top 0s ease 0s;
+              transition: top 0s ease 0s;
+    
+}
+
+
+.img_resp {
+    height: 250px;
+    width: auto;
+    
+    /* XXX: remove URLs from CSS */
+    background-image: url("/s/lake.jpg");
+    background-size: cover;
+    background-position: center bottom;
+    
+      -webkit-transition: height 0.25s ease 0s;
+         -moz-transition: height 0.25s ease 0s;
+           -o-transition: height 0.25s ease 0s;
+          -ms-transition: height 0.25s ease 0s;
+              transition: height 0.25s ease 0s;
+}
+
+@media (max-width: 768px) {
+    .img_resp {
+        height: 200px;
+    }
+    .header_content {
+        top: 30px;
+    }
+}
+
+@media (min-width:768px) and (max-width: 992px) {
+    .img_resp {
+        height: 250px;
+    }
+    .header_content {
+        top: 50px;
+    }
+}
+
+@media (min-width:992px) and (max-width: 1200px) {
+    .img_resp {
+        height: 300px;
+    }
+    .header_content {
+        top: 70px;
+    }
+}
+
+@media (min-width:1200px) {
+    .img_resp {
+        height: 300px;
+        width: 100%;
+    }
+    .header_content {
+        top: 90px;
+    }
+}
+
+/* END Theme tuning ------------------------------------------------------- */
