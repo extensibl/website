@@ -44,8 +44,7 @@ fun mkTel (tel:string) : xbody =
 
 fun mkNoSpamEmail (email : string) (pageLoaded : source bool) : transaction xbody = 
     return 
-        <xml>
-            <dyn signal={
+        <xml><dyn signal={
                 v <- signal pageLoaded;
                 return (if v 
                         then <xml><a href={bless (strcat "mailto:" email)}>{[email]}</a></xml> 
@@ -63,15 +62,6 @@ fun mkSection (sectionId:id) (title:string) (content:xbody) : xbody =
             {content}
         </div>
     </xml>
-
-fun mkClock (timeSource : source time) : transaction xbody = 
-    return 
-        <xml>
-            <dyn signal={
-                v <- signal timeSource;
-                return <xml>{[v]}</xml>
-            } />
-        </xml>
 
 
 fun idToHashUrl (i:id) : url = bless (strcat "#" (show i))
