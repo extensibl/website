@@ -26,6 +26,17 @@ val bsTile12 = classes (classes (classes
                         Bootstrap3.b3_col_md_12    )
                         Bootstrap3.b3_col_lg_12
 
+fun mkSection (sectionId:id) (title:string) (content:xbody) : xbody =
+    <xml>
+        <div class="b3_container">
+            <div class="b3_page_header">
+                <span class="t_target" id={sectionId}></span>
+                <h1>{[title]}</h1>
+            </div>
+            {content}
+        </div>
+    </xml>
+
 fun mkTile cssclass (content : xbody) : xbody = 
     <xml>
         <div class="cssclass">
@@ -42,6 +53,7 @@ fun mkTxtBlock (title : string) (content : xbody) : xbody =
 fun mkTel (tel:string) : xbody =
     <xml><a href={bless (strcat "tel:" tel)}>{[tel]}</a></xml>
 
+(* XXX: Does not work properly *)
 fun mkNoSpamEmail (email : string) (pageLoaded : source bool) : transaction xbody = 
     return 
         <xml><dyn signal={
@@ -52,18 +64,7 @@ fun mkNoSpamEmail (email : string) (pageLoaded : source bool) : transaction xbod
             } />
         </xml>
 
-fun mkSection (sectionId:id) (title:string) (content:xbody) : xbody =
-    <xml>
-        <div class="b3_container">
-            <div class="b3_page_header">
-                <span class="t_target" id={sectionId}></span>
-                <h1>{[title]}</h1>
-            </div>
-            {content}
-        </div>
-    </xml>
-
-
+(* XXX: There must be a better way to create anchors inside the page *)
 fun idToHashUrl (i:id) : url = bless (strcat "#" (show i))
 
 fun main () : transaction page = 
@@ -99,7 +100,7 @@ fun main () : transaction page =
         </head>
         
         
-        <body onload={set pageLoaded True} class="t_min_width_limit t_position_relative"  data-spy="scroll" data-offset="55" data-target=".floating_navigation">
+        <body onload={set pageLoaded True} class="t_min_width_limit t_position_relative"  data-spy="scroll" data-offset="55">
         
             <div class="t_img_resp"></div>
             
