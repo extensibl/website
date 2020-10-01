@@ -10,7 +10,7 @@ Includes:
 jQuery(function ($) {
 
     // make menu visible everytime on tablets and larger screens
-    function positionMenu() {
+    positionMenu=()=>{
         var viewportHeight = window.innerHeight;
         var menuHeight = $('.menu').height();
         var logoHeight = viewportHeight - menuHeight;
